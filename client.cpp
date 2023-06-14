@@ -20,6 +20,6 @@ int main() {
     write(sockfd, message, strlen(message));  // 发送消息到服务器
 
     close(sockfd);  // 关闭socket
-
+    //test
     return 0;
 }

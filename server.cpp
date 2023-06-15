@@ -11,7 +11,7 @@ int main() {
     server_addr.sin_port = htons(8888);  // 监听8888端口
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);  // 任何地址都可以连接
 
-    bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));  // 绑定地址和端口
+    bind(sockfd, (sockaddr*)&server_addr, sizeof(server_addr));  // 绑定地址和端口
 
     listen(sockfd, 5);  // 开始监听
 

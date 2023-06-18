@@ -6,6 +6,7 @@
 
 int main() {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);  // 创建一个socket
+
     struct sockaddr_in server_addr;
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(8888);  // 监听8888端口
@@ -13,7 +14,7 @@ int main() {
 
     bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));  // 绑定地址和端口
 
-    listen(sockfd, 0);  // 开始监听
+    listen(sockfd, 5);  // 开始监听
 
     struct sockaddr_in client_addr;
     socklen_t client_len = sizeof(client_addr);
